@@ -1,0 +1,118 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({
+    Name = "The Classic Hub",
+    HidePremium = false,
+    SaveConfig = true,
+    ConfigFolder = "TheClassicFiles"
+})
+
+local HubTab = Window:MakeTab({
+    Name = "The Hub",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local Section1 = HubTab:AddSection({
+    Name = "a dusty trip [CLASSIC❗️]"
+})
+
+-- Add farming script button
+Section1:AddButton({
+    Name = "A Dusty Trip (Tix Farm & Token Farm)",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicAdustyTrip", true))()
+    end
+})
+
+-- y
+Section1:AddButton({
+    Name = "Teleport to a dusty trip [CLASSIC❗️]",
+    Callback = function()
+        local placeId = 16389395869
+        if game.PlaceId == placeId then
+            -- Player is already in the game, show a notification
+            OrionLib:MakeNotification({
+                Name = "The Hub",
+                Content = "You are already in the game.",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+        else
+            -- y
+            game:GetService("TeleportService"):Teleport(placeId, game.Players.LocalPlayer)
+        end
+    end
+})
+
+local Section2 = HubTab:AddSection({
+    Name = "Blade Ball [⚔️CLASSIC]"
+})
+
+Section2:AddButton({
+    Name = "Blade Ball (Tix Farm & Token Farm)",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicBladeBall", true))()
+    end
+})
+-- y
+Section2:AddButton({
+    Name = "Teleport to Blade Ball [⚔️CLASSIC]",
+    Callback = function()
+        local placeId = 13772394625
+        if game.PlaceId == placeId then
+            -- Player is already in the game, show a notification
+            OrionLib:MakeNotification({
+                Name = "The Hub",
+                Content = "You are already in the game.",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+        else
+            -- y
+            game:GetService("TeleportService"):Teleport(placeId, game.Players.LocalPlayer)
+        end
+    end
+})
+
+local Section3 = HubTab:AddSection({
+    Name = "Adopt Me!"
+})
+
+Section3:AddButton({
+    Name = "Adopt Me! (Tix Farm & Token Farm)",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicAdoptMe", true))()
+    end
+})
+
+-- y
+Section3:AddButton({
+    Name = "Teleport to Adopt Me!",
+    Callback = function()
+        local placeId = 920587237
+        if game.PlaceId == placeId then
+            -- Player is already in the game, show a notification
+            OrionLib:MakeNotification({
+                Name = "The Hub",
+                Content = "You are already in the game.",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+        else
+            -- y
+            game:GetService("TeleportService"):Teleport(placeId, game.Players.LocalPlayer)
+        end
+    end
+})
+
+local Section4 = HubTab:AddSection({
+Name = "CLASSIC 😎 Restaurant Tycoon 2"
+})
+
+Section4:AddButton({
+    Name = "CLASSIC 😎 Restaurant Tycoon 2 (Tix Farm & Token Farm)",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicRestaurant", true))()
+    end
+})

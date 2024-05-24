@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
 
 local Window = OrionLib:MakeWindow({
     Name = "The Classic Hub",
@@ -13,11 +13,24 @@ local HubTab = Window:MakeTab({
     PremiumOnly = false
 })
 
+local function teleportToPlace(placeId)
+    if game.PlaceId == placeId then
+        OrionLib:MakeNotification({
+            Name = "The Hub",
+            Content = "You are already in the game.",
+            Image = "rbxassetid://4483345998",
+            Time = 5
+        })
+    else
+        game:GetService("TeleportService"):Teleport(placeId, game.Players.LocalPlayer)
+        wait(2)
+    end
+end
+
 local Section1 = HubTab:AddSection({
-    Name = "a dusty trip [CLASSIC❗️]"
+    Name = "A Dusty Trip [CLASSIC❗️]"
 })
 
--- Add farming script button
 Section1:AddButton({
     Name = "A Dusty Trip (Tix Farm & Token Farm)",
     Callback = function()
@@ -25,23 +38,10 @@ Section1:AddButton({
     end
 })
 
--- y
 Section1:AddButton({
-    Name = "Teleport to a dusty trip [CLASSIC❗️]",
+    Name = "Teleport to A Dusty Trip [CLASSIC❗️]",
     Callback = function()
-        local placeId = 16389395869
-        if game.PlaceId == placeId then
-            -- Player is already in the game, show a notification
-            OrionLib:MakeNotification({
-                Name = "The Hub",
-                Content = "You are already in the game.",
-                Image = "rbxassetid://4483345998",
-                Time = 5
-            })
-        else
-            -- y
-            game:GetService("TeleportService"):Teleport(placeId, game.Players.LocalPlayer)
-        end
+        teleportToPlace(16389395869)
     end
 })
 
@@ -55,23 +55,11 @@ Section2:AddButton({
         loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicBladeBall", true))()
     end
 })
--- y
+
 Section2:AddButton({
     Name = "Teleport to Blade Ball [⚔️CLASSIC]",
     Callback = function()
-        local placeId = 13772394625
-        if game.PlaceId == placeId then
-            -- Player is already in the game, show a notification
-            OrionLib:MakeNotification({
-                Name = "The Hub",
-                Content = "You are already in the game.",
-                Image = "rbxassetid://4483345998",
-                Time = 5
-            })
-        else
-            -- y
-            game:GetService("TeleportService"):Teleport(placeId, game.Players.LocalPlayer)
-        end
+        teleportToPlace(13772394625)
     end
 })
 
@@ -86,33 +74,63 @@ Section3:AddButton({
     end
 })
 
--- y
 Section3:AddButton({
     Name = "Teleport to Adopt Me!",
     Callback = function()
-        local placeId = 920587237
-        if game.PlaceId == placeId then
-            -- Player is already in the game, show a notification
-            OrionLib:MakeNotification({
-                Name = "The Hub",
-                Content = "You are already in the game.",
-                Image = "rbxassetid://4483345998",
-                Time = 5
-            })
-        else
-            -- y
-            game:GetService("TeleportService"):Teleport(placeId, game.Players.LocalPlayer)
-        end
+        teleportToPlace(920587237)
     end
 })
 
 local Section4 = HubTab:AddSection({
-Name = "CLASSIC 😎 Restaurant Tycoon 2"
+    Name = "CLASSIC 😎 Restaurant Tycoon 2"
 })
 
 Section4:AddButton({
     Name = "CLASSIC 😎 Restaurant Tycoon 2 (Tix Farm & Token Farm)",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicRestaurant", true))()
+    end
+})
+
+Section4:AddButton({
+    Name = "Teleport to CLASSIC 😎 Restaurant Tycoon 2",
+    Callback = function()
+        teleportToPlace(3398014311)
+    end
+})
+
+local Section5 = HubTab:AddSection({
+    Name = "Livetopia 📦CLASSIC!"
+})
+
+Section5:AddButton({
+    Name = "Livetopia 📦CLASSIC! (Tix Farm & Token Farm)",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicLivetopia", true))()
+    end
+})
+
+Section5:AddButton({
+    Name = "Teleport to Livetopia 📦CLASSIC!",
+    Callback = function()
+        teleportToPlace(6737970321)
+    end
+})
+
+local Section6 = HubTab:AddSection({
+    Name = "[🛣️CLASSIC] Toilet Tower Defense"
+})
+
+Section6:AddButton({
+    Name = "[🛣️CLASSIC] Toilet Tower Defense (Tix Farm & Token Farm)",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicToiletTower", true))()
+    end
+})
+
+Section6:AddButton({
+    Name = "[🛣️CLASSIC] Toilet Tower Defense",
+    Callback = function()
+        teleportToPlace(13775256536)
     end
 })

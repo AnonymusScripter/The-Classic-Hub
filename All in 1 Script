@@ -187,3 +187,7 @@ end)
 addButton(Section15, "Teleport to CLASSIC 💥 Dragon Adventures 🐉 Fantasy Pets ✨", "Teleports you to CLASSIC 💥 Dragon Adventures 🐉 Fantasy Pets ✨", function()
     teleportToPlace(3475397644)
 end)
+
+local CreditsTab = Window:NewTab("Credits")
+
+local CreditsTabSection = CreditsTab:NewSection("Discord: core_blox")

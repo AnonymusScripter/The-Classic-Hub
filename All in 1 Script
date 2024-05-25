@@ -190,4 +190,6 @@ end)
 
 local CreditsTab = Window:NewTab("Credits")
 
-local CreditsTabSection = CreditsTab:NewSection("Discord: core_blox")
+local CreditsTabSection1 = CreditsTab:NewSection("Contact me on Discord: core_blox")
+
+local CreditsTabSection2 = CreditsTab:NewSection("Scripts: Tora isme")

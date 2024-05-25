@@ -188,6 +188,26 @@ addButton(Section15, "Teleport to CLASSIC 💥 Dragon Adventures 🐉 Fantasy Pe
     teleportToPlace(3475397644)
 end)
 
+local Section16 = HubTab:NewSection("a dusty trip [CLASSIC❗️]")
+
+addButton(Section16, "a dusty trip [CLASSIC❗️] (Tix Farm & Token Farm)", "Loads the a dusty trip script", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicAdustyTrip", true))()
+end)
+
+addButton(Section16, "Teleport to a dusty trip [CLASSIC❗️]", "Teleports you to a dusty trip [CLASSIC❗️]", function()
+    teleportToPlace(16389395869)
+end)
+
+local Section17 = HubTab:NewSection("Blade Ball [⚔️CLASSIC]")
+
+addButton(Section17, "Blade Ball [⚔️CLASSIC] (Tix Farm & Token Farm)", "Loads the Blade Ball script", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicBladeBall", true))()
+end)
+
+addButton(Section17, "Teleport to a Blade Ball [⚔️CLASSIC]", "Teleports you to Blade Ball [⚔️CLASSIC]", function()
+    teleportToPlace(13772394625)
+end)
+
 local CreditsTab = Window:NewTab("Credits")
 
 local CreditsTabSection1 = CreditsTab:NewSection("Contact me on Discord: core_blox")

@@ -1,18 +1,12 @@
+-- Gui to Lua
+-- Version: 3.2
+
 -- Instances:
 
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local TextButton = Instance.new("TextButton")
 local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
-
--- Toggle variable to track UI visibility
-local uiVisible = true
-
--- Function to toggle UI visibility
-local function toggleUI()
-    uiVisible = not uiVisible
-    Frame.Visible = uiVisible
-end
 
 --Properties:
 
@@ -24,7 +18,6 @@ Frame.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
 Frame.BackgroundTransparency = 0.500
 Frame.Position = UDim2.new(0.858712733, 0, 0.0237762257, 0)
 Frame.Size = UDim2.new(0.129513338, 0, 0.227972031, 0)
-Frame.Visible = uiVisible  -- Set initial visibility
 
 TextButton.Parent = Frame
 TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -39,13 +32,13 @@ TextButton.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
 TextButton.TextStrokeTransparency = 0.000
 TextButton.TextWrapped = true
 TextButton.MouseButton1Down:Connect(function()
-    toggleUI()  -- Call the toggle function when button is clicked
+	game:GetService("VirtualInputManager"):SendKeyEvent(true, "F6" , false , game)
 end)
 
 UITextSizeConstraint.Parent = TextButton
 UITextSizeConstraint.MaxTextSize = 50
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 
 local Window = Library.CreateLib("The Classic Hub", "BloodTheme")
 

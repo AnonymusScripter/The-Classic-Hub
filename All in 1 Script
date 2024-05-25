@@ -1,136 +1,149 @@
-local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = OrionLib:MakeWindow({
-    Name = "The Classic Hub",
-    HidePremium = false,
-    SaveConfig = true,
-    ConfigFolder = "TheClassicFiles"
-})
-
-local HubTab = Window:MakeTab({
-    Name = "The Hub",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
+local Window = Library.CreateLib("The Classic Hub", "BloodTheme")
 
 local function teleportToPlace(placeId)
     if game.PlaceId == placeId then
-        OrionLib:MakeNotification({
-            Name = "The Hub",
-            Content = "You are already in the game.",
-            Image = "rbxassetid://4483345998",
-            Time = 5
-        })
+        Library:Notify("The Hub", "You are already in the game.", "rbxassetid://4483345998", 5)
     else
         game:GetService("TeleportService"):Teleport(placeId, game.Players.LocalPlayer)
         wait(2)
     end
 end
 
-local Section1 = HubTab:AddSection({
-    Name = "A Dusty Trip [CLASSIC❗️]"
-})
+local function addButton(section, name, info, callback)
+    local button = section:NewButton(name, info, callback)
+    return button
+end
 
-Section1:AddButton({
-    Name = "A Dusty Trip (Tix Farm & Token Farm)",
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicAdustyTrip", true))()
-    end
-})
+local HubTab = Window:NewTab("The Hub")
 
-Section1:AddButton({
-    Name = "Teleport to A Dusty Trip [CLASSIC❗️]",
-    Callback = function()
-        teleportToPlace(16389395869)
-    end
-})
+local Section3 = HubTab:NewSection("Adopt Me!")
 
-local Section2 = HubTab:AddSection({
-    Name = "Blade Ball [⚔️CLASSIC]"
-})
+addButton(Section3, "Adopt Me! (Tix Farm & Token Farm)", "Loads the Adopt Me! script", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicAdoptMe", true))()
+end)
 
-Section2:AddButton({
-    Name = "Blade Ball (Tix Farm & Token Farm)",
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicBladeBall", true))()
-    end
-})
+addButton(Section3, "Teleport to Adopt Me!", "Teleports you to Adopt Me!", function()
+    teleportToPlace(920587237)
+end)
 
-Section2:AddButton({
-    Name = "Teleport to Blade Ball [⚔️CLASSIC]",
-    Callback = function()
-        teleportToPlace(13772394625)
-    end
-})
+local Section4 = HubTab:NewSection("CLASSIC 😎 Restaurant Tycoon 2")
 
-local Section3 = HubTab:AddSection({
-    Name = "Adopt Me!"
-})
+addButton(Section4, "CLASSIC 😎 Restaurant Tycoon 2 (Tix Farm)", "Loads the Restaurant Tycoon 2 script", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicRestaurant", true))()
+end)
 
-Section3:AddButton({
-    Name = "Adopt Me! (Tix Farm & Token Farm)",
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicAdoptMe", true))()
-    end
-})
+addButton(Section4, "Teleport to CLASSIC 😎 Restaurant Tycoon 2", "Teleports you to Restaurant Tycoon 2", function()
+    teleportToPlace(3398014311)
+end)
 
-Section3:AddButton({
-    Name = "Teleport to Adopt Me!",
-    Callback = function()
-        teleportToPlace(920587237)
-    end
-})
+local Section5 = HubTab:NewSection("Livetopia 📦CLASSIC!")
 
-local Section4 = HubTab:AddSection({
-    Name = "CLASSIC 😎 Restaurant Tycoon 2"
-})
+addButton(Section5, "Livetopia 📦CLASSIC! (Tix Farm & Token Farm)", "Loads the Livetopia script", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicLivetopia", true))()
+end)
 
-Section4:AddButton({
-    Name = "CLASSIC 😎 Restaurant Tycoon 2 (Tix Farm & Token Farm)",
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicRestaurant", true))()
-    end
-})
+addButton(Section5, "Teleport to Livetopia 📦CLASSIC!", "Teleports you to Livetopia", function()
+    teleportToPlace(6737970321)
+end)
 
-Section4:AddButton({
-    Name = "Teleport to CLASSIC 😎 Restaurant Tycoon 2",
-    Callback = function()
-        teleportToPlace(3398014311)
-    end
-})
+local Section6 = HubTab:NewSection("[🛣️CLASSIC] Toilet Tower Defense")
 
-local Section5 = HubTab:AddSection({
-    Name = "Livetopia 📦CLASSIC!"
-})
+addButton(Section6, "[🛣️CLASSIC] Toilet Tower Defense (Tix Farm)", "Loads the Toilet Tower Defense script", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicToiletTower", true))()
+end)
 
-Section5:AddButton({
-    Name = "Livetopia 📦CLASSIC! (Tix Farm & Token Farm)",
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicLivetopia", true))()
-    end
-})
+addButton(Section6, "[🛣️CLASSIC] Toilet Tower Defense", "Teleports you to Toilet Tower Defense", function()
+    teleportToPlace(13775256536)
+end)
 
-Section5:AddButton({
-    Name = "Teleport to Livetopia 📦CLASSIC!",
-    Callback = function()
-        teleportToPlace(6737970321)
-    end
-})
+local Section7 = HubTab:NewSection("The Classic [OFFICIAL]")
 
-local Section6 = HubTab:AddSection({
-    Name = "[🛣️CLASSIC] Toilet Tower Defense"
-})
+addButton(Section7, "The Classic [OFFICIAL] (Full Farm)", "Loads The Classic script", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/TheClassic", true))()
+end)
 
-Section6:AddButton({
-    Name = "[🛣️CLASSIC] Toilet Tower Defense (Tix Farm & Token Farm)",
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicToiletTower", true))()
-    end
-})
+addButton(Section7, "The Classic [OFFICIAL]", "Teleports you to The Classic", function()
+    teleportToPlace(17427651911)
+end)
 
-Section6:AddButton({
-    Name = "[🛣️CLASSIC] Toilet Tower Defense",
-    Callback = function()
-        teleportToPlace(13775256536)
-    end
-})
+local Section8 = HubTab:NewSection("Bee Swarm Simulator")
+
+addButton(Section8, "Bee Swarm Simulator (Tix Farm)", "Loads the Bee Swarm Simulator script", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicBeeSwarm", true))()
+end)
+
+addButton(Section8, "Bee Swarm Simulator", "Teleports you to Bee Swarm Simulator", function()
+    teleportToPlace(1537690962)
+end)
+
+local Section9 = HubTab:NewSection("Dress To Impress 💖 [UPDATE]")
+
+addButton(Section9, "Dress To Impress 💖 [UPDATE] (Tix Farm & Token Farm)", "Loads the Dress To Impress 💖 script", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicDressToImpress", true))()
+end)
+
+addButton(Section9, "Teleport to Dress To Impress 💖 [UPDATE]", "Teleports you to Dress To Impress 💖 [UPDATE]", function()
+    teleportToPlace(15101393044)
+end)
+
+local Section10 = HubTab:NewSection("[CLASSIC] Arsenal")
+
+addButton(Section10, "[CLASSIC] Arsenal (Tix Farm & Token Farm)", "Loads the Arsenal script", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicArsenal", true))()
+end)
+
+addButton(Section10, "Teleport to [CLASSIC] Arsenal", "Teleports you to [CLASSIC] Arsenal", function()
+    teleportToPlace(286090429)
+end)
+
+local Section11 = HubTab:NewSection("[CLASSIC] Driving Empire 🏎️ Car Racing")
+
+addButton(Section11, "[CLASSIC] Driving Empire 🏎️ Car Racing (Tix Farm & Token Farm)", "Loads the Driving Empire 🏎️ script", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicDrivingEmpire", true))()
+end)
+
+addButton(Section11, "Teleport to [CLASSIC] Driving Empire 🏎️ Car Racing", "Teleports you to [CLASSIC] Driving Empire 🏎️ Car Racing", function()
+    teleportToPlace(3351674303)
+end)
+
+local Section12 = HubTab:NewSection("[ROBLOX CLASSIC] Clip It 😂🎬👗")
+
+addButton(Section12, "[ROBLOX CLASSIC] Clip It 😂🎬👗(Tix Farm & Token Farm)", "Loads the Clip It 😂🎬👗 script", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicClipIt", true))()
+end)
+
+addButton(Section12, "Teleport to [ROBLOX CLASSIC] Clip It 😂🎬👗", "Teleports you to [ROBLOX CLASSIC] Clip It 😂🎬👗", function()
+    teleportToPlace(11765402359)
+end)
+
+local Section13 = HubTab:NewSection("💥CLASSIC💥 Tower Defense Simulator")
+
+addButton(Section13, "💥CLASSIC💥 Tower Defense Simulator (Tix Farm)", "Tower Defense Simulator script", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicTowerDefense", true))()
+end)
+
+addButton(Section13, "Teleport to 💥CLASSIC💥 Tower Defense Simulator", "Teleports you to 💥CLASSIC💥 Tower Defense Simulator", function()
+    teleportToPlace(3260590327)
+end)
+
+local Section14 = HubTab:NewSection("BedWars🐧[Penguin Survival]")
+
+addButton(Section14, "BedWars🐧[Penguin Survival] (Tix Farm & Esp)", "Bedwars🐧 script", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicBedWars", true))()
+end)
+
+addButton(Section14, "Teleport to BedWars🐧[Penguin Survival]", "Teleports you to BedWars🐧[Penguin Survival]", function()
+    teleportToPlace(6872265039)
+end)
+
+local Section15 = HubTab:NewSection("CLASSIC 💥 Dragon Adventures 🐉 Fantasy Pets ✨")
+
+addButton(Section15, "CLASSIC 💥 Dragon Adventures 🐉 Fantasy Pets ✨ (Tix Farm & Token Farm)", "Loads the Dragon Adventures 🐉 script", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicDragon", true))()
+end)
+
+addButton(Section15, "Teleport to CLASSIC 💥 Dragon Adventures 🐉 Fantasy Pets ✨", "Teleports you to CLASSIC 💥 Dragon Adventures 🐉 Fantasy Pets ✨", function()
+    teleportToPlace(3475397644)
+end)

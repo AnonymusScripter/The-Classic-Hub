@@ -60,8 +60,6 @@ local HubTab = Window:NewTab("The Hub")
 
 local CreditsTab = Window:NewTab("Credits")
 
-local CreditsTabSection = CreditsTab:NewSection("Discord: core_blox")
-
 local Section3 = HubTab:NewSection("Adopt Me!")
 
 addButton(Section3, "Adopt Me! (Tix Farm & Token Farm)", "Loads the Adopt Me! script", function()
@@ -191,3 +189,5 @@ end)
 addButton(Section15, "Teleport to CLASSIC 💥 Dragon Adventures 🐉 Fantasy Pets ✨", "Teleports you to CLASSIC 💥 Dragon Adventures 🐉 Fantasy Pets ✨", function()
     teleportToPlace(3475397644)
 end)
+
+local CreditsTabSection = CreditsTab:NewSection("Contact me on Discord: core_blox")
